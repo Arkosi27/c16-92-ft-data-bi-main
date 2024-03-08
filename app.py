@@ -37,7 +37,7 @@ model = joblib.load(model_path)
 st.title('Predicción de Muertes por Sobredosis de Drogas para 2024~2025')
 
 # Subheading based on functionalities
-st.subheader('Esta aplicación te permite:  \n* Visualizar el histórico mensual de muertes por sobredosis de drogas en Colombia.  \n* Analizar el comportamiento de los datos mediante el modelo SARIMA (1, 1, 1) x (1, 1, 1, 12).  \n* Generar un pronóstico para el año 2024. \n* Ten en cuenta que el pronóstico es para fines informativos y no debe utilizarse para la toma de decisiones.')
+st.subheader('Esta aplicación te permite:  \n* Visualizar el histórico mensual de muertes por sobredosis de drogas en USA.  \n* Analizar el comportamiento de los datos mediante el modelo SARIMA (1, 1, 1) x (1, 1, 1, 12).  \n* Generar un pronóstico para el año 2024~2025. \n* Ten en cuenta que el pronóstico es para fines informativos y no debe utilizarse para la toma de decisiones.')
 
 
 # Sidebar navigation
