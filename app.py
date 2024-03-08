@@ -95,10 +95,10 @@ if st.button('Generate Forecast'):
     # Plot forecast
     fig, ax = plt.subplots()
     ax.plot(monthly_data.index, monthly_data, label='Historical Monthly Data')
-    ax.plot(forecast.index, forecast, label='Forecasted Monthly Data for 2024', color='red')
-    ax.set_title('Forecast of Drug Overdose Deaths for 2024')
+    ax.plot(forecast.index, forecast, label='Forecasted Monthly Data for 2024', color='black')
+    ax.set_title('Forecast of Drug Overdose Deaths for 2024~2025')
     ax.set_xlabel('Date')
-    ax.set_ylabel('Number of Drug Overdose Deaths')
+    ax.set_ylabel('Número de muertes por sobredosis de opioides')
     ax.legend()
     st.pyplot(fig)
     
