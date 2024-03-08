@@ -129,13 +129,13 @@ elif page == 'Reporte PostCovid':
     sns.heatmap(deaths_pivot, cmap='viridis', annot=True, fmt='g')
     st.pyplot()
 
-    # Box plot for deaths by month
+# Box plot for deaths by month
     df['Month'] = df['Date'].dt.strftime('%B')
     st.subheader('Box Plot of Deaths by Month')
     sns.boxplot(x='Month', y='Data Value', data=df, palette='viridis')
     plt.xlabel('Month')
-    plt.ylabel('Número de muertes')
-    plt.title('Distribución de muertes por mes en 2023')
+    plt.ylabel('Number of Deaths')
+    plt.title('Distribution of Deaths by Month in 2023')
     plt.xticks(rotation=45)
     st.pyplot()
 
