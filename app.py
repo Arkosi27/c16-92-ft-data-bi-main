@@ -134,8 +134,8 @@ elif page == 'Reporte PostCovid':
     st.subheader('Box Plot of Deaths by Month')
     sns.boxplot(x='Month', y='Data Value', data=df, palette='viridis')
     plt.xlabel('Month')
-    plt.ylabel('Number of Deaths')
-    plt.title('Distribution of Deaths by Month')
+    plt.ylabel('Número de muertes')
+    plt.title('Distribución de muertes por mes en 2023')
     plt.xticks(rotation=45)
     st.pyplot()
 
