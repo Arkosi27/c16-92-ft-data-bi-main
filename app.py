@@ -18,10 +18,10 @@ df['Date'] = pd.to_datetime(df['Date'], format='%Y-%B')
 df = df[(df['Date'] >= '2019-01-01') & (df['Date'] <= '2023-08-12')]
 
 # Filter the dataset for 'Number of Drug Overdose Deaths'
-df_forecast_deaths = df[df['Indicator'] == 'Number of Drug Overdose Deaths']
+df_forecast_deaths = df[df['Indicator'] == 'Número de muertes por sobredosis de opioides']
 
 # Ensure the data is in the correct order
-sorted_df = df_forecast_deaths.sort_values(by='Date')
+sorted_df = df_forecast_deaths.sort_values(by='Fecha')
 
 # Handle missing values by filling with the mean
 sorted_df['Data Value'] = sorted_df['Data Value'].fillna(sorted_df['Data Value'].mean())
@@ -69,16 +69,16 @@ monthly_data = load_data()
 fig, ax = plt.subplots()
 ax.plot(monthly_data.index, monthly_data)
 ax.set_xlabel('Date')
-ax.set_ylabel('Number of Drug Overdose Deaths')
+ax.set_ylabel('Número de muertes por sobredosis de opioides')
 st.pyplot(fig)
 
 # Model parameters section
-st.subheader('SARIMA Model Parameters')
+st.subheader('Parametros del Modelo SARIMA')
 st.text(' - Order: (1, 1, 1)')
 st.text(' - Seasonal Order: (1, 1, 1, 12)')
 
 # Forecast section
-st.subheader('Forecast for 2024~2025')
+st.subheader('Forecast para 2024~2025')
 
 # Button to trigger forecast calculation
 if st.button('Generate Forecast'):
@@ -115,12 +115,12 @@ elif page == 'Reporte PostCovid':
 
     # Total number of deaths by year
     deaths_by_year = df.groupby(df['Date'].dt.year)['Data Value'].sum()
-    st.subheader('Total Number of Deaths by Year')
+    st.subheader('Número de muertes por año')
     st.bar_chart(deaths_by_year)
 
     # Total number of deaths by month
     deaths_by_month = df.groupby(df['Date'].dt.strftime('%B'))['Data Value'].sum().sort_values()
-    st.subheader('Total Number of Deaths by Month')
+    st.subheader('Número de muertes por mes durante 2023')
     st.bar_chart(deaths_by_month)
 
     # Line chart for deaths over time
@@ -135,7 +135,7 @@ elif page == 'Reporte PostCovid':
 
     # Heatmap for deaths by year and month
     deaths_pivot = df.pivot_table(index=df['Date'].dt.month, columns=df['Date'].dt.year, values='Data Value', aggfunc='sum')
-    st.subheader('Heatmap of Deaths by Year and Month')
+    st.subheader('Heatmap Número de muertes por año y por MES')
     sns.heatmap(deaths_pivot, cmap='viridis', annot=True, fmt='g')
     st.pyplot()
 
