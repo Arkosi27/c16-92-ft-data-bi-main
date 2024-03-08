@@ -123,16 +123,6 @@ elif page == 'Reporte PostCovid':
     st.subheader('Número de muertes por mes durante 2023')
     st.bar_chart(deaths_by_month)
 
-    # Line chart for deaths over time
-    st.subheader('Trend of Deaths Over Time')
-    fig, ax = plt.subplots(figsize=(12, 6))
-    ax.plot(sorted_df.index, sorted_df['Data Value'], marker='o', linestyle='-')
-    ax.set_xlabel('Date')
-    ax.set_ylabel('Number of Deaths')
-    ax.set_title('Trend of Drug Overdose Deaths')
-    ax.set_xticklabels(ax.get_xticklabels(), rotation=45)
-    st.pyplot(fig)
-
     # Heatmap for deaths by year and month
     deaths_pivot = df.pivot_table(index=df['Date'].dt.month, columns=df['Date'].dt.year, values='Data Value', aggfunc='sum')
     st.subheader('Heatmap Número de muertes por año y por MES')
