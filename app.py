@@ -21,7 +21,7 @@ df = df[(df['Date'] >= '2019-01-01') & (df['Date'] <= '2023-08-12')]
 df_forecast_deaths = df[df['Indicator'] == 'Número de muertes por sobredosis de opioides']
 
 # Ensure the data is in the correct order
-sorted_df = df_forecast_deaths.sort_values(by='Fecha')
+sorted_df = df_forecast_deaths.sort_values(by='Date')
 
 # Handle missing values by filling with the mean
 sorted_df['Data Value'] = sorted_df['Data Value'].fillna(sorted_df['Data Value'].mean())
