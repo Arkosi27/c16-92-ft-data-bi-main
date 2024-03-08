@@ -130,6 +130,7 @@ elif page == 'Reporte PostCovid':
     st.pyplot()
 
 # Box plot for deaths by month
+    st.set_option('deprecation.showPyplotGlobalUse', False)
     df['Month'] = df['Date'].dt.strftime('%B')
     st.subheader('Box Plot of Deaths by Month')
     sns.boxplot(x='Month', y='Data Value', data=df, palette='viridis')
